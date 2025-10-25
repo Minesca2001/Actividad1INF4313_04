@@ -1,0 +1,105 @@
+﻿@model Actividad4LengProg3.Models.EstudianteViewModel
+@{
+    ViewData["Title"] = "Editar Estudiantes";
+}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8" />
+    <title>Editar Estudiante</title>
+    <style>
+        body {
+            font-family: Segoe UI, Arial, 'sans-serif';
+            background: #f5f5f5;
+            background-image: url('https://cdn.pixabay.com/photo/2024/09/05/08/24/mountain-9024209_1280.jpg');
+            background-size: cover;
+            padding: 40px;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .form-container {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+            width: 400px;
+        }
+
+        h2 {
+            text-align: center;
+            color: #333;
+        }
+
+        label {
+            font-weight: bold;
+            color: #555;
+        }
+
+        input, select {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 15px;
+        }
+
+        button {
+            width: 100%;
+            padding: 10px;
+            background-color: #00b4db;
+            border: none;
+            color: white;
+            font-size: 16px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+            button:hover {
+                background-color: #0083b0;
+            }
+
+        .back-link {
+            display: block;
+            text-align: center;
+            margin-top: 15px;
+            color: #0083b0;
+            text-decoration: none;
+        }
+
+            .back-link:hover {
+                text-decoration: underline;
+            }
+    </style>
+</head>
+<body>
+    <div class="form-container">
+        <h2>Editar Estudiante</h2>
+        <form action="/Estudiante/Editar" method="post">
+            <label>Nombre:</label>
+            <input type="text" name="Nombre" value="@Model.Nombre" required />
+
+            <label>Matrícula:</label>
+            <input type="text" name="Matricula" value="@Model.Matricula" readonly />
+
+            <label>Carrera:</label>
+            <input type="text" name="Carrera" value="@Model.Carrera" required />
+
+            <label>Recinto:</label>
+            <input type="text" name="Recinto" value="@Model.Recinto" required />
+
+            <label>Correo:</label>
+            <input type="email" name="Email" value="@Model.Email" required />
+
+            <button type="submit">Guardar Cambios</button>
+        </form>
+
+        <a href="/Estudiante/Lista" class="back-link">Volver a la lista</a>
+    </div>
+</body>
+</html>
+}

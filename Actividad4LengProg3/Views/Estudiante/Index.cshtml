@@ -1,0 +1,136 @@
+﻿@model Actividad4LengProg3.Models.EstudianteViewModel
+@{
+    ViewData["Title"] = "Index";
+}
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8" />
+    <title>Registro de Estudiante</title>
+    <style>
+        body {
+            font-family: Segoe UI, Arial, 'sans-serif';
+            background-image: url('https://cdn.pixabay.com/photo/2024/09/05/08/24/mountain-9024209_1280.jpg');
+            background-size: cover;
+            height: 100vh;
+            justify-content: center;
+            align-items: center;
+            color: #333;
+        }
+
+        .form-container {
+            background-color: rgba(255, 255, 255, 0.9);
+            padding: 30px;
+            border-radius: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+            width: 400px;
+        }
+
+        h2 {
+            color: #444;
+            text-align: center;
+        }
+
+        .input-group {
+            margin-bottom: 15px;
+        }
+
+        label {
+            font-weight: bold;
+            color: #444;
+        }
+
+        input, select {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #aaa;
+            border-radius: 6px;
+        }
+
+        button {
+            width: 100%;
+            padding: 10px;
+            background: linear-gradient(45deg, #00b4db, #0083b0);
+            border: none;
+            color: white;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            transform: scale(1.05);
+        }
+
+        .mensaje {
+            color: red;
+            text-align: center;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="form-container">
+        <h2>Registrar Estudiante</h2>
+        <form asp-action="Registrar" method="post">
+            <div class="input-group">
+                <label>Nombre</label>
+                <input asp-for="Nombre" />
+                <span asp-validation-for="Nombre" class="text-danger"></span>
+            </div>
+            <div class="input-group">
+                <label>Matrícula</label>
+                <input asp-for="Matricula" />
+                <span asp-validation-for="Matricula" class="text-danger"></span>
+            </div>
+            <div class="input-group">
+                <label>Carrera</label>
+                <input asp-for="Carrera" />
+            </div>
+            <div class="input-group">
+                <label>Recinto</label>
+                <input asp-for="Recinto" />
+            </div>
+            <div class="input-group">
+                <label>Correo</label>
+                <input asp-for="Email" type="email" />
+            </div>
+            <div class="input-group">
+                <label>Celular</label>
+                <input asp-for="Celular" />
+            </div>
+            <div class="input-group">
+                <label>Teléfono</label>
+                <input asp-for="Telefono" />
+            </div>
+            <div class="input-group">
+                <label>Dirección</label>
+                <input asp-for="Direccion" />
+            </div>
+            <div class="input-group">
+                <label>Fecha de nacimiento</label>
+                <input asp-for="Fecha_de_Nacimiento" type="date" />
+            </div>
+            <div class="input-group">
+                <label>Género</label>
+                <select asp-for="Genero">
+                    <option>Masculino</option>
+                    <option>Femenino</option>
+                </select>
+            </div>
+            <div class="input-group">
+                <label>Turno</label>
+                <select asp-for="Turno">
+                    <option>Matutino</option>
+                    <option>Vespertino</option>
+                </select>
+            </div>
+            <div class="input-group">
+                <label>Porcentaje de Beca (%)</label>
+                <input asp-for="PorcentajeBeca" type="number" />
+            </div>
+            <button type="submit">Registrar</button>
+        </form>
+    </div>
+</body>
+</html>

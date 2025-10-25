@@ -1,0 +1,37 @@
+﻿@model Actividad4LengProg3.Models.CarreraViewModel
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8" />
+    <title>Editar Carrera</title>
+    <style>
+        body { font-family: Segoe UI; background: #f5f5f5; padding: 40px; }
+        form { background: white; padding: 20px; border-radius: 10px; width: 400px; margin: auto; }
+        label { display: block; margin-top: 10px; }
+        input[type="text"], input[type="number"] { width: 100%; padding: 8px; margin-top: 5px; }
+        .btn { margin-top: 15px; padding: 8px 15px; background: #ffc107; color: white; border: none; border-radius: 5px; }
+    </style>
+</head>
+<body>
+    <h2>Editar Carrera</h2>
+    @using (Html.BeginForm())
+    {
+        @Html.HiddenFor(m => m.Codigo)
+
+        <label>Nombre</label>
+        @Html.TextBoxFor(m => m.Nombre)
+
+        <label>Cantidad de Créditos</label>
+        @Html.TextBoxFor(m => m.CantidadCreditos)
+
+        <label>Cantidad de Materias</label>
+        @Html.TextBoxFor(m => m.CantidadMaterias)
+
+        <button type="submit" class="btn">Actualizar</button>
+    }
+</body>
+</html>
